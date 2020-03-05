@@ -25,21 +25,23 @@ public:
 			nextAlive = true;
 		}
 		else nextAlive = false;
-		//if (x >= 0 && x <= 2 && y >= 0 && y <= 2) 
-			std::cout << x << ";" << y << ":" << "alive: " << isAlive() << " next alive: " << nextAlive << " alive neigbours: " << aliveNeighbours << '\n';
 	}
 	myCell(int x, int y) : cell(x,y)
 	{
+		aliveSign = "O";
 	}
 };
 int main()
 {
-	gameOfLife<myCell> game(5,5);
-	game.setAlive(2, 1, true);
-	game.setAlive(2, 2, true);
+	gameOfLife<myCell> game(10,10);
+	game.setAlive(3, 1, true);
+	game.setAlive(3, 2, true);
+	game.setAlive(3, 3, true);
 	game.setAlive(2, 3, true);
+	game.setAlive(1, 2, true);
 	while (true)
 	{
+		std::cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
 		std::cout << game.toString();
 		game.step();
 		std::cin.ignore();

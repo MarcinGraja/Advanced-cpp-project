@@ -74,14 +74,14 @@ public:
 	}
 	void step()
 	{
-		for (std::vector<cellDerived> row : rows)
+		for (std::vector<cellDerived> &row : rows)
 		{
 			for (cellDerived &c : row)
 			{
 				c.calculateNextState(parent);
 			}
 		}
-		for (std::vector<cellDerived> row : rows)
+		for (std::vector<cellDerived> &row : rows)
 		{
 			for (cellDerived &c : row)
 			{
